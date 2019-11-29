@@ -1,0 +1,15 @@
+var http = require("http");
+var sensorLib = require("node-dht-sensor");
+http.createServer(function (request, response)
+{
+   var sensorResult = sensorLib.read(22, 12);
+   var ftemp = sensorResult.temperature*9/5+32;
+   var resultTH="Temperature: " + sensorResult.temperature.toFixed(1) +" C / "
+       + ftemp.toFixed(1) +" F<br />Humidity:  "
+       + sensorResult.humidity.toFixed(1) + "%";
+
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end(resultTH);
+}).listen(8081);
+
+console.log("Server running on port 8081")

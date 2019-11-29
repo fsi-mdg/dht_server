@@ -1,0 +1,14 @@
+{
+  "name": "dht_server",
+  "version": "1.0.0",
+  "description": "monitors temp from DHT22 and displays in web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell D. Gram",
+  "license": "ISC",
+  "dependencies": {
+    "node-dht-sensor": "^0.4.0"
+  }
+}
